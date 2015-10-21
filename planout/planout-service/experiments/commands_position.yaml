@@ -1,0 +1,19 @@
+namespace:
+  unit: userid
+  segments: 1
+
+
+experiment_definitions:
+
+  - definition: commands_position_experiment
+    assign: !planout |
+      position = uniformChoice(choices = ["left", "right"], unit = userid);
+
+
+default_experiment: commands_position_experiment
+
+experiment_sequence:
+  - action: add                      
+    definition: commands_position_experiment
+    name: commands_position
+    segments: 1              
